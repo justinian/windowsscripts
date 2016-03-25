@@ -1,7 +1,7 @@
 # Make Shortcuts of select files residing in $source_location at $destination_location
 
-[string] $source_location = "C:\Users\$Env:USERNAME\Scripts"
-[string] $destination_location = "C:\Users\$env:USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Scripts"
+[string] $source_location = Split-Path -parent $myInvocation.MyCommand.Definition
+[string] $destination_location = "${Env:AppData}\Microsoft\Windows\Start Menu\Programs\Scripts"
 $shell = New-Object -ComObject 'WScript.Shell'
 
 if (Test-Path $destination_location -PathType container) {
