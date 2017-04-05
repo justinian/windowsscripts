@@ -11,8 +11,8 @@ New-Item $destination_location -ItemType container >$null
 
 $script_types = @{
 	"*.ps1" = ("C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", "-File");
-	"*.py" = ("C:\tools\python2\python.exe", "");
-	"*.pyw" = ("C:\tools\python2\pythonw.exe", "");
+	"*.py" = ("py.exe", "");
+	"*.pyw" = ("pyw.exe", "");
 	}
 
 foreach ($mask in $script_types.Keys) {
